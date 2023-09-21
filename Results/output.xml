@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on darwin)" generated="20230918 15:34:14.369" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="/Users/suleymanoguz/Documents/RobotFramework/tests/Login.robot">
+<kw name="Open the browser" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230918 15:34:14.425" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com/'.</msg>
+<status status="PASS" starttime="20230918 15:34:14.425" endtime="20230918 15:34:17.100"/>
+</kw>
+<status status="PASS" starttime="20230918 15:34:14.425" endtime="20230918 15:34:17.100"/>
+</kw>
+<test id="s1-t1" name="Register with valid data" line="15">
+<kw name="Register to the demo Webshop" library="register_page">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Register Link}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230918 15:34:17.101" endtime="20230918 15:34:17.108"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Register Link}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:17.108" level="INFO">Clicking link '//a[normalize-space()='Register']'.</msg>
+<status status="PASS" starttime="20230918 15:34:17.108" endtime="20230918 15:34:17.393"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230918 15:34:18.394" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230918 15:34:17.393" endtime="20230918 15:34:18.395"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${gender male}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:18.396" level="INFO">Clicking element '//*[@id="gender-male"]'.</msg>
+<status status="PASS" starttime="20230918 15:34:18.395" endtime="20230918 15:34:18.445"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230918 15:34:19.446" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230918 15:34:18.445" endtime="20230918 15:34:19.447"/>
+</kw>
+<kw name="Generate Random First Name" library="RandomNameGenerator">
+<var>${firstname_random}</var>
+<kw name="Create List" library="BuiltIn">
+<var>${first_names}</var>
+<arg>John</arg>
+<arg>Jane</arg>
+<arg>Michael</arg>
+<arg>Sarah</arg>
+<arg>David</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230918 15:34:19.448" level="INFO">${first_names} = ['John', 'Jane', 'Michael', 'Sarah', 'David']</msg>
+<status status="PASS" starttime="20230918 15:34:19.448" endtime="20230918 15:34:19.448"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_first_name}</var>
+<arg>random.choice($first_names)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230918 15:34:19.452" level="INFO">${random_first_name} = Michael</msg>
+<status status="PASS" starttime="20230918 15:34:19.448" endtime="20230918 15:34:19.452"/>
+</kw>
+<msg timestamp="20230918 15:34:19.452" level="INFO">${firstname_random} = Michael</msg>
+<status status="PASS" starttime="20230918 15:34:19.447" endtime="20230918 15:34:19.452"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${first name}</arg>
+<arg>${firstname_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:19.453" level="INFO">Typing text 'Michael' into text field '//*[@id="FirstName"]'.</msg>
+<status status="PASS" starttime="20230918 15:34:19.453" endtime="20230918 15:34:19.542"/>
+</kw>
+<kw name="Generate Random Last Name" library="RandomNameGenerator">
+<var>${lastname_random}</var>
+<kw name="Create List" library="BuiltIn">
+<var>${last_names}</var>
+<arg>Smith</arg>
+<arg>Johnson</arg>
+<arg>Brown</arg>
+<arg>Davis</arg>
+<arg>Wilson</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230918 15:34:19.542" level="INFO">${last_names} = ['Smith', 'Johnson', 'Brown', 'Davis', 'Wilson']</msg>
+<status status="PASS" starttime="20230918 15:34:19.542" endtime="20230918 15:34:19.542"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_last_name}</var>
+<arg>random.choice($last_names)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230918 15:34:19.542" level="INFO">${random_last_name} = Johnson</msg>
+<status status="PASS" starttime="20230918 15:34:19.542" endtime="20230918 15:34:19.542"/>
+</kw>
+<msg timestamp="20230918 15:34:19.542" level="INFO">${lastname_random} = Johnson</msg>
+<status status="PASS" starttime="20230918 15:34:19.542" endtime="20230918 15:34:19.542"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${last name}</arg>
+<arg>${lastname_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:19.543" level="INFO">Typing text 'Johnson' into text field '//*[@id="LastName"]'.</msg>
+<status status="PASS" starttime="20230918 15:34:19.542" endtime="20230918 15:34:19.578"/>
+</kw>
+<kw name="Generate Random Email" library="RandomNameGenerator">
+<var>${random_email}</var>
+<kw name="Generate Random String" library="String">
+<var>${random_string}</var>
+<arg>10</arg>
+<arg>[NUMBERS][LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230918 15:34:19.578" level="INFO">${random_string} = gsm8jep9si</msg>
+<status status="PASS" starttime="20230918 15:34:19.578" endtime="20230918 15:34:19.578"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>${random_string}@example.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230918 15:34:19.579" level="INFO">${email} = gsm8jep9si@example.com</msg>
+<status status="PASS" starttime="20230918 15:34:19.578" endtime="20230918 15:34:19.579"/>
+</kw>
+<msg timestamp="20230918 15:34:19.579" level="INFO">${random_email} = gsm8jep9si@example.com</msg>
+<status status="PASS" starttime="20230918 15:34:19.578" endtime="20230918 15:34:19.579"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230918 15:34:20.581" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230918 15:34:19.579" endtime="20230918 15:34:20.581"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email field}</arg>
+<arg>${random_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:20.583" level="INFO">Typing text 'gsm8jep9si@example.com' into text field '//*[@id="Email"]'.</msg>
+<status status="PASS" starttime="20230918 15:34:20.582" endtime="20230918 15:34:20.652"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230918 15:34:21.653" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230918 15:34:20.652" endtime="20230918 15:34:21.653"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Password}</arg>
+<arg>test123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:21.656" level="INFO">Typing text 'test123' into text field '//*[@id="Password"]'.</msg>
+<status status="PASS" starttime="20230918 15:34:21.654" endtime="20230918 15:34:21.722"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230918 15:34:22.724" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230918 15:34:21.722" endtime="20230918 15:34:22.725"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Confirm password}</arg>
+<arg>test123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:22.728" level="INFO">Typing text 'test123' into text field '//*[@id="ConfirmPassword"]'.</msg>
+<status status="PASS" starttime="20230918 15:34:22.725" endtime="20230918 15:34:22.792"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230918 15:34:23.793" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230918 15:34:22.792" endtime="20230918 15:34:23.793"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${register button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:23.795" level="INFO">Clicking button '//*[@id="register-button"]'.</msg>
+<status status="PASS" starttime="20230918 15:34:23.794" endtime="20230918 15:34:24.737"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230918 15:34:26.740" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230918 15:34:24.737" endtime="20230918 15:34:26.740"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${register succesfull}</arg>
+<arg>Your registration completed</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230918 15:34:26.743" level="INFO">Verifying element '//div[@class='result']' contains exact text 'Your registration completed'.</msg>
+<status status="PASS" starttime="20230918 15:34:26.741" endtime="20230918 15:34:26.772"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${continue button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230918 15:34:26.773" level="INFO">Clicking button '//input[@value='Continue']'.</msg>
+<status status="PASS" starttime="20230918 15:34:26.772" endtime="20230918 15:34:27.085"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${customer info}</arg>
+<arg>${random_email}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230918 15:34:27.085" level="INFO">Verifying element '//a[@href='/customer/info']' contains exact text 'gsm8jep9si@example.com'.</msg>
+<status status="PASS" starttime="20230918 15:34:27.085" endtime="20230918 15:34:27.110"/>
+</kw>
+<status status="PASS" starttime="20230918 15:34:17.101" endtime="20230918 15:34:27.110"/>
+</kw>
+<status status="PASS" starttime="20230918 15:34:17.101" endtime="20230918 15:34:27.110"/>
+</test>
+<kw name="Close the browser" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230918 15:34:27.111" endtime="20230918 15:34:27.184"/>
+</kw>
+<status status="PASS" starttime="20230918 15:34:27.111" endtime="20230918 15:34:27.184"/>
+</kw>
+<status status="PASS" starttime="20230918 15:34:14.370" endtime="20230918 15:34:27.184"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230918 15:34:14.421" level="WARN">Imported resource file '/Users/suleymanoguz/Documents/RobotFramework/Resources/PO/login_page.robot' is empty.</msg>
+<msg timestamp="20230918 15:34:14.422" level="ERROR">Error in file '/Users/suleymanoguz/Documents/RobotFramework/Resources/PO/register_page.robot' on line 3: Importing library 'RPA.Desktop' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /Library/Frameworks/Python.framework/Versions/3.11/bin
+  /Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip
+  /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11
+  /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload
+  /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages</msg>
+</errors>
+</robot>
