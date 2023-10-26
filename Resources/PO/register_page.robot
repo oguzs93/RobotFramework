@@ -1,13 +1,20 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    RPA.Desktop
 Resource    ../Locators.robot
 Resource    ../common.robot
 Resource    ../PO/register_page.robot
 Resource    ../RandomNameGenerator.robot
 
+ 
+
+*** Variables ***
+${firstname_random}
+${lastname_random}
+${random_email}
+
 *** Keywords ***    
 Register to the demo Webshop
+     [Arguments]       ${Password_input}    ${Confirm password_input} 
      Wait Until Page Contains Element    ${Register Link}    timeout=10s
      Click Link    ${Register Link}
      Sleep    1s
@@ -17,20 +24,23 @@ Register to the demo Webshop
      Input Text       ${first name}    ${firstname_random}
      ${lastname_random}    RandomNameGenerator.Generate Random Last Name
      Input Text    ${last name}    ${lastname_random}
-     ${random_email}       RandomNameGenerator.Generate Random Email
+     #${random_email}       RandomNameGenerator.Generate Random Email
      Sleep    1s
-     Input Text    ${email field}    ${random_email}
+     Input Text    ${email field}    ${email}
      Sleep    1s
-     Input Text    ${Password}    test123
+     Input Text    ${Password}    ${Password_input}
      Sleep    1s
-     Input Text    ${Confirm password}    test123
+     Input Text    ${Confirm password}    ${Confirm password_input}
      Sleep    1s
      Click Button    ${register button}
      Sleep    2s
-     Element Text Should Be    ${register succesfull}    Your registration completed
-     Click Button    ${continue button}
-     Element Text Should Be    ${customer info}    ${random_email}
+
+
+
+
      
+Logout
+    Click Link    ${Log out button}
 
 
 

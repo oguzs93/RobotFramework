@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.13 on darwin)" generated="20230906 15:28:03.957" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.9.13 on darwin)" generated="20231012 11:24:17.077" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Interactive Console" source="/Users/suleymanoguz/.vscode/extensions/robocorp.robotframework-lsp-1.11.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20230906 15:28:03.978" endtime="20230906 15:31:40.944"/>
+<kw name="common.Navigate to url">
+<msg timestamp="20231012 11:24:17.696" level="FAIL">No keyword with name 'common.Navigate to url' found.</msg>
+<status status="FAIL" starttime="20231012 11:24:17.696" endtime="20231012 11:24:17.696"/>
 </kw>
-<status status="PASS" starttime="20230906 15:28:03.978" endtime="20230906 15:31:40.946"/>
+<kw name="register_page.Register to the demo Webshop">
+<arg>test123</arg>
+<arg>test12345</arg>
+<status status="NOT RUN" starttime="20231012 11:24:17.699" endtime="20231012 11:24:17.699"/>
+</kw>
+<kw name="Element Text Should Be">
+<arg>${confirmPassword_message}</arg>
+<arg>The password and confirmation password do not match.</arg>
+<status status="NOT RUN" starttime="20231012 11:24:17.703" endtime="20231012 11:24:17.703"/>
+</kw>
+<status status="PASS" starttime="20231012 11:24:17.111" endtime="20231012 11:24:28.676"/>
+</kw>
+<status status="PASS" starttime="20231012 11:24:17.110" endtime="20231012 11:24:28.678"/>
 </test>
-<status status="PASS" starttime="20230906 15:28:03.958" endtime="20230906 15:31:40.947"/>
+<status status="PASS" starttime="20231012 11:24:17.079" endtime="20231012 11:24:28.679"/>
 </suite>
 <statistics>
 <total>

@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    RPA.Desktop
 Resource    ../Resources/Locators.robot
 Resource    ../Resources/common.robot
 Resource    ../Resources/PO/register_page.robot
